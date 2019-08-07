@@ -1,0 +1,6 @@
+<snippet>
+  <content><![CDATA[
+${1:When} I click the element with selector '${2:SELECTOR}'
+]]></content>
+  <tabTrigger>whenclickelwithselector</tabTrigger>
+</snippet>

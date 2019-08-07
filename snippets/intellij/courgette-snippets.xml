@@ -246,6 +246,21 @@
       <option name="OTHER" value="true" />
     </context>
   </template>
+  <template name="whenclickelwithxpath" value="$var1$ I click the '$var2$' element with xpath '$var3$'$END$" shortcut="TAB" description="$var1$ I click the '$var2$' element with xpath '$var3$'" toReformat="false" toShortenFQNames="true">
+    <variable name="var1" expression="&quot;When&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="var2" expression="&quot;NTH&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="var3" expression="&quot;SELECTOR&quot;" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="whenclickelwithselector" value="$var1$ I click the element with selector '$var2$'$END$" shortcut="TAB" description="$var1$ I click the element with selector '$var2$'" toReformat="false" toShortenFQNames="true">
+    <variable name="var1" expression="&quot;When&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="var2" expression="&quot;SELECTOR&quot;" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
   <template name="whenclickelwithtext" value="$var1$ I click the '$var2$' element with the text '$var3$'$END$" shortcut="TAB" description="$var1$ I click the '$var2$' element with the text '$var3$'" toReformat="false" toShortenFQNames="true">
     <variable name="var1" expression="&quot;When&quot;" defaultValue="" alwaysStopAt="true" />
     <variable name="var2" expression="&quot;NTH&quot;" defaultValue="" alwaysStopAt="true" />

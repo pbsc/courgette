@@ -12,6 +12,12 @@ const steps = [
     matcher: "I set the file upload 'VALUE' to(?: the)? element with selector 'SELECTOR'", path: './actions/uploadFileSelector', code: 'uploadfileselector', pageObjectNotRequired: true,
   },
   {
+    matcher: "I click(?: the)?(?: 'NTH')? element with xpath 'SELECTOR'", path: './actions/clickElementWithXPath', code: 'clickelwithxpath', pageObjectNotRequired: true,
+  },
+  {
+    matcher: "I click(?: the)? element with selector 'SELECTOR'", path: './actions/clickElementWithCSSSelector', code: 'clickelwithselector', pageObjectNotRequired: true,
+  },
+  {
     matcher: "I click(?: the)?(?: 'NTH')? element with the text 'VALUE'", path: './actions/clickElementWithText', code: 'clickelwithtext', pageObjectNotRequired: true,
   },
   {

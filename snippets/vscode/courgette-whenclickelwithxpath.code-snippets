@@ -1,0 +1,9 @@
+{
+  "Print to console": {
+    "prefix": "whenclickelwithxpath",
+    "body": [
+      "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'"
+    ],
+    "description": "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'"
+  }
+}

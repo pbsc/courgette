@@ -12,6 +12,16 @@ Feature: Testing When steps
   Scenario: When I upload a file
     When I set the file upload 'testsToValidateStepDefinitions/features/given.feature' to the 'file upload'
 
+  @when-click-with-css-selector
+  Scenario: When I upload a file
+    When I click the element with selector 'a'
+    Then I expect to be on the 'other' page
+
+  @when-click-with-xpath
+  Scenario: When I upload a file
+    When I click the '3rd' element with xpath '//a'
+    Then I expect to be on the 'simple' page
+
   @when-steps-append-value
   Scenario: When I append to a field
     When I append 'hello' to 'email'

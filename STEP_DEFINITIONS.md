@@ -25,9 +25,11 @@ Note that the words in italics are optional.
 
 | Step definition | Snippet Code | Notes |
 | --- | --- | --- |
-| When I wait 'VALUE' seconds? | whenwait |  |
+| When I wait 'VALUE' seconds? | whenwait | singular or plural works (second or seconds) |
 | When I set the file upload 'VALUE' to _the_ element with selector 'SELECTOR' | whenuploadfileselector |  |
-| When&nbsp;I&nbsp;click&nbsp;_the_&nbsp;_'NTH'_&nbsp;element&nbsp;with&nbsp;the&nbsp;text&nbsp;'VALUE' | whenclickelwithtext |  |
+| When&nbsp;I&nbsp;click&nbsp;_the_&nbsp;_'NTH'_&nbsp;element&nbsp;with&nbsp;xpath&nbsp;'SELECTOR' | whenclickelwithxpath |  |
+| When I click _the_ element with selector 'SELECTOR' | whenclickelwithselector |  |
+| When I click _the_ _'NTH'_ element with the text 'VALUE' | whenclickelwithtext |  |
 | When I click _the_ _'NTH'_ element that contains the text 'VALUE' | whenclickelcontainstext |  |
 | When I press 'KEY' | whenkey | [See list of possible keys](https://gist.github.com/canvaspixels/a5793fe712743dda9216eef06cc96022) - [This only works in ChromeDriver](https://github.com/canvaspixels/courgette/issues/16) |
 

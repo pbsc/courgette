@@ -1,0 +1,9 @@
+{
+  "Print to console": {
+    "prefix": "whenclickelwithselector",
+    "body": [
+      "${1:When} I click the element with selector '${2:SELECTOR}'"
+    ],
+    "description": "${1:When} I click the element with selector '${2:SELECTOR}'"
+  }
+}

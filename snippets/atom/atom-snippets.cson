@@ -103,6 +103,12 @@
   "${1:When} I set the file upload '${2:VALUE}' to the element with selector '${3:SELECTOR}'":
     'prefix': 'whenuploadfileselector'
     'body': "${1:When} I set the file upload '${2:VALUE}' to the element with selector '${3:SELECTOR}'"
+  "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'":
+    'prefix': 'whenclickelwithxpath'
+    'body': "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'"
+  "${1:When} I click the element with selector '${2:SELECTOR}'":
+    'prefix': 'whenclickelwithselector'
+    'body': "${1:When} I click the element with selector '${2:SELECTOR}'"
   "${1:When} I click the '${2:NTH}' element with the text '${3:VALUE}'":
     'prefix': 'whenclickelwithtext'
     'body': "${1:When} I click the '${2:NTH}' element with the text '${3:VALUE}'"
@@ -392,6 +398,12 @@
   "${1:When} I set the file upload '${2:VALUE}' to the element with selector '${3:SELECTOR}'":
     'prefix': 'whenuploadfileselector'
     'body': "${1:When} I set the file upload '${2:VALUE}' to the element with selector '${3:SELECTOR}'"
+  "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'":
+    'prefix': 'whenclickelwithxpath'
+    'body': "${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'"
+  "${1:When} I click the element with selector '${2:SELECTOR}'":
+    'prefix': 'whenclickelwithselector'
+    'body': "${1:When} I click the element with selector '${2:SELECTOR}'"
   "${1:When} I click the '${2:NTH}' element with the text '${3:VALUE}'":
     'prefix': 'whenclickelwithtext'
     'body': "${1:When} I click the '${2:NTH}' element with the text '${3:VALUE}'"

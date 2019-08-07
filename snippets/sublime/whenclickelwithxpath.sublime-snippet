@@ -1,0 +1,6 @@
+<snippet>
+  <content><![CDATA[
+${1:When} I click the '${2:NTH}' element with xpath '${3:SELECTOR}'
+]]></content>
+  <tabTrigger>whenclickelwithxpath</tabTrigger>
+</snippet>
