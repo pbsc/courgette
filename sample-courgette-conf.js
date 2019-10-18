@@ -11,7 +11,7 @@ exports.pomConfig = {
   pagesPath: path.resolve(specsPath, 'pages'),
   componentsPath: path.resolve(specsPath, 'components'),
   stepsPath: path.resolve(specsPath, 'stepDefinitions'),
-  baseUrl: 'https://www.google.com', // <------------ SET THE URL TO YOUR PROJECT HERE
+  baseUrl: 'https://courgette-testing.com', // <------------ SET THE URL TO YOUR PROJECT HERE
   // screenshotPath: outputPath, // not needed unless you need it to differ to the outputPath. Used for error screenshots
   // screenshotStepPath: 'stepDefinitionScreenshots', // is appended to the screenshotPath or outputPath if one isn't set. Used for screenshots in the step definitions (e.g. When I take a screenshot)
   minifyPng: false, // defaults to '0.6-0.8', can be set to the quality string or true / false
@@ -24,18 +24,20 @@ exports.pomConfig = {
 
 exports.cucumberHtmlReporterConfig = {};
 
+const disableHeadless = process.env.disableHeadless === 'true' || process.env.dh === 'true';
+
 const capabilities = {
   chrome: {
     browserName: 'chrome',
     chromeOptions: {
       args: ['--window-size=1100,800']
-        .concat(process.env.disableHeadless ? [] : ['--headless', '--disable-gpu']),
+        .concat(disableHeadless ? [] : ['--headless', '--disable-gpu']),
     },
   },
   firefox: {
     'browserName': 'firefox',
     'moz:firefoxOptions': {
-      args: [].concat(process.env.disableHeadless ? [] : ['-headless']),
+      args: [].concat(disableHeadless ? [] : ['-headless']),
       prefs: {
         'general.useragent.override': 'Automated tests',
       },
@@ -70,10 +72,10 @@ const protractorConfig = {
       `${courgettePath}/hooks/pageObjectModelBefore.js`,
       `${courgettePath}/hooks/addMethodsBefore.js`,
       `${courgettePath}/hooks/setDefaultTimeout.js`,
-      `${courgettePath}/hooks/loadSteps.js`,
       `${courgettePath}/stepDefinitions/*.js`,
       `${specsPath}/stepDefinitions/*.js`,
       // `${specsPath}/helpers/hooks.js`,
+      `${courgettePath}/hooks/loadSteps.js`, // keep this at the end
     ],
     'tags': ['~@ignore'].concat(tags || []),
     'format': [

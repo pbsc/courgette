@@ -20,7 +20,7 @@ exports.pomConfig = {
 
 exports.cucumberHtmlReporterConfig = {};
 
-const disableHeadless = process.env.disableHeadless === 'true';
+const disableHeadless = process.env.disableHeadless === 'true' || process.env.dh === 'true';
 
 const capabilities = {
   chrome: {
@@ -66,13 +66,13 @@ const protractorConfig = {
       `${courgettePath}/hooks/attachScenarioNameBefore.js`,
       `${courgettePath}/hooks/attachScreenshotAfter.js`,
       `${courgettePath}/hooks/deleteAllCookies.js`,
-      `${courgettePath}/hooks/loadSteps.js`,
       `${courgettePath}/hooks/pageObjectModelBefore.js`,
       `${courgettePath}/hooks/addMethodsBefore.js`,
       `${courgettePath}/hooks/setDefaultTimeout.js`,
       `${courgettePath}/stepDefinitions/*.js`,
       `${specsPath}/stepDefinitions/*.js`,
       // `${specsPath}/helpers/hooks.js`,
+      `${courgettePath}/hooks/loadSteps.js`, // keep this at the end
     ],
     'tags': ['~@ignore'].concat(tags || []),
     'format': [

@@ -1,4 +1,5 @@
 const path = require('path');
+
 require('babel-core/register');
 
 const specsPath = 'uiTests';
@@ -13,24 +14,26 @@ exports.pomConfig = {
   pagesPath: path.resolve(specsPath, 'pages'),
   componentsPath: path.resolve(specsPath, 'components'),
   stepsPath: path.resolve(specsPath, 'stepDefinitions'),
-  baseUrl: 'https://www.google.com',
+  baseUrl: 'https://courgette-testing.com',
   minifyPng: false,
 };
 
 exports.cucumberHtmlReporterConfig = {};
+
+const disableHeadless = process.env.disableHeadless === 'true' || process.env.dh === 'true';
 
 const capabilities = {
   chrome: {
     browserName: 'chrome',
     chromeOptions: {
       args: ['--window-size=1100,800']
-        .concat(process.env.disableHeadless ? [] : ['--headless', '--disable-gpu']),
+        .concat(disableHeadless ? [] : ['--headless', '--disable-gpu']),
     },
   },
   firefox: {
     'browserName': 'firefox',
     'moz:firefoxOptions': {
-      args: [].concat(process.env.disableHeadless ? [] : ['-headless']),
+      args: [].concat(disableHeadless ? [] : ['-headless']),
       prefs: {
         'general.useragent.override': 'Automated tests',
       },
@@ -66,10 +69,10 @@ const protractorConfig = {
       `${courgettePath}/hooks/pageObjectModelBefore.js`,
       `${courgettePath}/hooks/addMethodsBefore.js`,
       `${courgettePath}/hooks/setDefaultTimeout.js`,
-      `${courgettePath}/hooks/loadSteps.js`,
       `${courgettePath}/stepDefinitions/*.js`,
       `${specsPath}/stepDefinitions/*.js`,
       // `${specsPath}/helpers/hooks.js`,
+      `${courgettePath}/hooks/loadSteps.js`, // keep this at the end
     ],
     'tags': ['~@ignore'].concat(tags || []),
     'format': [
